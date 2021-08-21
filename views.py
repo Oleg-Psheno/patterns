@@ -18,3 +18,12 @@ def not_found_view(request):
 class Other:
     def __call__(self, request):
         return '200 OK', [b'Other']
+
+class Contacts:
+    def __call__(self, request):
+        page = 'templates/contacts.html'
+        template = render(page)
+        if request['method'] == "POST":
+            print(f'Получили данные с формы: {request["data"]}')
+        return '200 OK', [template.encode(encoding='utf-8')]
+

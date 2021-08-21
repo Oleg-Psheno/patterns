@@ -1,9 +1,10 @@
-from views import index_view, about_view, Other
+from views import index_view, about_view, Other, Contacts
 
 routes = {
     '/': index_view,
     '/about/': about_view,
-    '/other/': Other()
+    '/other/': Other(),
+    '/contacts/': Contacts()
 }
 
 def first_front(request):
