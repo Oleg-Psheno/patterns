@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title%}
+    Главная
+{% endblock %}
+
+{% block style %}
+    {% include "style.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+     <h1>Главная страница</h1>
+
+    <h3>Параметр для теста прокидывания аргументов</h3>
+    {{param}}
+    <form method="post"  accept-charset="utf-8">
+        <h3>Форма </h3>
+        <label>
+            <input type="text" name="First input" placeholder="Имя">
+        </label>
+        <label>
+            <input type="date" name="Input date">
+        </label>
+        <label>
+            <input type="email" name="email input" placeholder="email" >
+        </label>
+        <label>
+            <input type="submit" class="submit-button">
+        </label>
+
+    </form>
+{% endblock %}

@@ -2,7 +2,7 @@ from my_framework.templator import render
 
 
 def index_view(request):
-    page = 'templates/template.html'
+    page = 'index.html'
     template = render(page, param='Test param')
     return '200 OK', [template.encode(encoding='utf-8')]
 
@@ -22,7 +22,7 @@ class Other:
 
 class Contacts:
     def __call__(self, request):
-        page = 'templates/contacts.html'
+        page = 'contacts.html'
         template = render(page)
         if request['method'] == "POST":
             print(f'Получили данные с формы: {request["data"]}')
