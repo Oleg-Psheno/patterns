@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title%}
+    Категории курсов
+{% endblock %}
+
+{% block content %}
+<h1>Категории курсов</h1>
+{% for category in categories %}
+<p>{{category.name}} {{category.id}}</p>
+{% endfor %}
+
+<h2>Создать категорию</h2>
+<form method="post">
+    <input type="text" name="name" placeholder="Введите название категории">
+    <input type="submit">
+</form>
+
+{% endblock %}

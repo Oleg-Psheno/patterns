@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title%}
+    Список курсов
+{% endblock %}
+
+{% block content %}
+<h1>Страница создания курса</h1>
+
+<form method="post">
+    <label for=""></label>
+    <input type="text" name="name" placeholder="Введите название курса">
+    <p><select name="category" id="">
+        <option disabled selected>Выберите категорию</option>
+        {% for category in categories %}
+        <option value="{{ category }}">{{category.name}}</option>
+        {% endfor %}
+    </select>
+    </p>
+    <p><select name="type" id="">
+        <option disabled selected>Выберите тип курса</option>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+    </select></p>
+    <p><a href="/categories/">Здесь можно создать категорию</a></p>
+    <input type="submit">
+</form>
+{% endblock %}
